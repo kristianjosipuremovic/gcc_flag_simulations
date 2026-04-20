@@ -33,7 +33,7 @@ All flags sourced from GCC 15.2 documentation.
 
 ### Completed
 
-- [x] `-fstack-check`
+- [x] `-fstack-check` (wasn't applicable to Cortex-M3 architecture
 - [x] `-fstack-limit-symbol=sym`
 
 ### Applicable on ARM Cortex-M3 / Zephyr bare-metal
