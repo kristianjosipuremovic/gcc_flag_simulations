@@ -53,7 +53,7 @@ All flags sourced from GCC 15.2 documentation.
 - [ ] `-ftrivial-auto-var-init=zero|pattern`
 
 **Control flow**
-- [ ] `-fharden-compares`
+- [x] `-fharden-compares`
 - [ ] `-fharden-conditional-branches`
 - [ ] `-fharden-control-flow-redundancy`
 
