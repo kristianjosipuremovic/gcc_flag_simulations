@@ -29,18 +29,50 @@ intentionally included as part of the portfolio to document the learning process
 
 ## Flags
 
-- [x] -fstack-check
-- [ ] -fstack-protector
-- [ ] -fstack-protector-strong
-- [ ] -fstack-protector-all
-- [ ] -fstack-protector-explicit
-- [ ] -fstack-clash-protection
-- [ ] -fstack-limit-symbol
-- [ ] -fstack-limit-register
-- [ ] -fharden-compares
-- [ ] -fharden-conditional-branches
-- [ ] -ftrivial-auto-var-init
-- [ ] -D_FORTIFY_SOURCE
+All flags sourced from GCC 15.2 documentation.
+
+### Completed
+
+- [x] `-fstack-check`
+- [x] `-fstack-limit-symbol=sym`
+
+### Applicable on ARM Cortex-M3 / Zephyr bare-metal
+
+**Stack protection — boundary enforcement**
+- [ ] `-fstack-limit-register=reg`
+- [ ] `-fno-stack-limit`
+
+**Stack protection — canary**
+- [ ] `-fstack-protector`
+- [ ] `-fstack-protector-strong`
+- [ ] `-fstack-protector-all`
+- [ ] `-fstack-protector-explicit`
+
+**Memory safety**
+- [ ] `-D_FORTIFY_SOURCE=1/2/3`
+- [ ] `-ftrivial-auto-var-init=zero|pattern`
+
+**Control flow**
+- [ ] `-fharden-compares`
+- [ ] `-fharden-conditional-branches`
+- [ ] `-fharden-control-flow-redundancy`
+
+### Not applicable on ARM Cortex-M3
+
+**Requires x86 Intel CET hardware**
+- `-fcf-protection=full|branch|return` — x86 only, requires Intel CET
+
+**Requires virtual memory / OS guard pages**
+- `-fstack-clash-protection` — guard page mechanism required
+
+**Requires aarch64**
+- `-fsanitize=shadow-call-stack` — aarch64 only
+
+**Requires runtime library / OS support**
+- `-fsanitize=address`
+- `-fsanitize=undefined`
+- `-fsanitize=thread`
+- `-fsanitize=leak`
 
 ## Research Context
 
